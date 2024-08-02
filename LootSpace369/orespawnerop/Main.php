@@ -24,8 +24,22 @@ class Main extends PluginBase {
     $this->getLogger()->notice('Ore Spawner OP on enable!');
   }
 
-  public static function getData(): Config {
-      return self::$data;
+  public static function getData(): array {
+      return self::$data->get('osp');
+  }
+
+  public static function setData(string $data): void {
+      self::$data->set('osp', array_merge($data, self::getData()));
+  }
+
+  public static function exists(string $data): bool {
+      foreach (self::getData() as $osp) {
+          $exosp = explode($osp);
+          if ($data == $exosp) {
+            return true;
+          }
+      }
+      return false;
   }
   
   public function onCommand(CommandSender $player, Command $command, string $label, array $args): bool {
