@@ -35,7 +35,7 @@ class Main extends PluginBase {
   public static function exists(string $data): bool {
       foreach (self::getData() as $osp) {
           $exosp = explode($osp);
-          if ($data == $exosp) {
+          if ($data == $exosp[0] .','. $exosp[1] .','. $exosp[2] .',' $exosp[3]) {
             return true;
           }
       }
