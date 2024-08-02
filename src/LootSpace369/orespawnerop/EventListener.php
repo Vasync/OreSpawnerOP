@@ -24,7 +24,7 @@ class EventListener implements Listener {
   public function onBreak(BlockBreakEvent $ev) {
       $block = $ev->getBlock();
       $pos = $block->getPosition();
-      $ktra = $pos[0] .','. ($pos[1] + 1) .','. $pos[2] .','. $pos->getWorld()->getFolderName();
+      $ktra = $pos->getX() .','. ($pos->getY() + 1) .','. $pos->getZ() .','. $pos->getWorld()->getFolderName();
       if (Main::existsData($ktra)) {
           Main::removeData($ktra);
           foreach ($ev->getDrops() as $drop) {
