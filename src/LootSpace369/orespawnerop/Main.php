@@ -31,6 +31,7 @@ class Main extends PluginBase {
 
   public static function setData(string $data): void {
       self::$data->set('osp', array_merge([$data], self::getData()));
+      self::$data->save();
   }
 
   public static function removeData(string $data): void {
