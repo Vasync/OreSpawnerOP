@@ -22,6 +22,8 @@ class Main extends PluginBase {
     $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
     
     $this->getLogger()->notice('Ore Spawner OP on enable!');
+
+    $this->getScheduler()->scheduleRepeatingTask(new UpdateOspTask(), 20);
   }
 
   public static function getData(): array {
