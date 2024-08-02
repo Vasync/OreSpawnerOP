@@ -6,6 +6,7 @@ main: LootSpace369\orespawnerop\Main
 commands:
  orespawner:
   permission: osp.cmd
+  aliases: ["osp"]
   description: ore spawner for server.
 permissions:
  osp.cmd:
