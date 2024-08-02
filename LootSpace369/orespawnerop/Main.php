@@ -34,7 +34,7 @@ class Main extends PluginBase {
 
   public static function removeData(string $data): void {
       foreach (self::getData() as $osp) {
-          $exosp = explode($osp);
+          $exosp = explode(',', $osp);
         
           if ($data == $exosp[0] .','. $exosp[1] + 1 .','. $exosp[2] .',' $exosp[3]) {
               unset(self::$data['osp'][$osp];
@@ -45,7 +45,7 @@ class Main extends PluginBase {
 
   public static function exists(string $data): bool {
       foreach (self::getData() as $osp) {
-          $exosp = explode($osp);
+          $exosp = explode(',', $osp);
           if ($data == $exosp[0] .','. $exosp[1] + 1 .','. $exosp[2] .',' $exosp[3]) {
             return true;
           }
