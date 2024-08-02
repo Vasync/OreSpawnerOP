@@ -16,14 +16,12 @@ class Main extends PluginBase {
 
   public static ?Config $data;
   
-  protected function onEnable(): void {
-    self::$data = new Config($this->getDataFolder() .'data.yml', Config::YAML);
+  protected function onEnable(): void {   self::$data = new Config($this->getDataFolder() .'data.yml', Config::YAML);
+      $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
     
-    $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
-    
-    $this->getLogger()->notice('Ore Spawner OP on enable!');
+      $this->getLogger()->notice('Ore Spawner OP on enable!');
 
-    $this->getScheduler()->scheduleRepeatingTask(new UpdateOspTask(), 20);
+      $this->getScheduler()->scheduleRepeatingTask(new UpdateOspTask(), 20);
   }
 
   public static function getData(): array {
