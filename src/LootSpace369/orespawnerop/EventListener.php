@@ -14,7 +14,7 @@ class EventListener implements Listener {
   public function onPlace(BlockPlaceEvent $ev) {
       $item = $ev->getItem();
     
-      if ($item->getNamedTag()->hasTag('osp')) {
+      if ($item->getNamedTag()->getTag('osp') !== null) {
           $pos = $ev->getTransaction()->getBlocks();
           Main::setData($pos[0] .','. ($pos[1] + 1) .','. $pos[2] .','. $ev->getPlayer()->getWorld()->getFolderName() .','. $item->getNamedTag()->getString('osp'));
       }
