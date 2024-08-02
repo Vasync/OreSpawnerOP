@@ -17,7 +17,7 @@ class UpdateOspTask extends Task {
       foreach (Main::getData() as $pos) {
           $ex = explode(",", $pos);
         
-          Server::getInstance()->getWorldManager()->getWorldByName($ex[3])->setBlockAt($ex[0], $ex[1], $ex[2], \pocketmine\item\StringToItemParser::getInstance()->parse($ex[4])->getBlock());
+          Server::getInstance()->getWorldManager()->getWorldByName($ex[3])->setBlockAt((int)$ex[0], (int)$ex[1], (int)$ex[2], \pocketmine\item\StringToItemParser::getInstance()->parse($ex[4])->getBlock());
       }
   }
 }
