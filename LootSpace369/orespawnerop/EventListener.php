@@ -24,7 +24,8 @@ class EventListener implements Listener {
       $block = $ev->getBlock();
       $pos = $block->getPosition();
       $ktra = $pos[0] .','. $pos[1] + 1 .','. $pos[2] .','. $pos->getWorld()->getFolderName();
-      if (Main::existsData()) {
+      if (Main::existsData($ktra)) {
+          Main::remove($ktra);
       }
   }
 }
