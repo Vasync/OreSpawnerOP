@@ -40,7 +40,7 @@ class Main extends PluginBase {
         
           if ($data == $exosp[0] .','. ((int)$exosp[1] + 1) .','. $exosp[2] .','. $exosp[3]) {
               unset(self::getData()[$osp]);
-            
+              self::$data->save();
               break;
           }
       }
