@@ -16,7 +16,8 @@ class Main extends PluginBase {
 
   public static ?Config $data;
   
-  protected function onEnable(): void {   self::$data = new Config($this->getDataFolder() .'data.yml', Config::YAML);
+  protected function onEnable(): void {   
+      self::$data = new Config($this->getDataFolder() .'data.yml', Config::YAML)['osp' => []];
       $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
     
       $this->getLogger()->notice('Ore Spawner OP on enable!');
