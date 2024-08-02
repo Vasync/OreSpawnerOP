@@ -20,5 +20,4 @@ class UpdateOspTask extends Task {
           Server::getInstance()->getWorldManager()->getWorldByName($ex[3])->setBlockAt($ex[0], $ex[1], $ex[2], \pocketmine\item\StringToItemParser::getInstance()->parse($ex[4]));
       }
   }
-  
 }
