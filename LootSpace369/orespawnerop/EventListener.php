@@ -26,6 +26,9 @@ class EventListener implements Listener {
       $ktra = $pos[0] .','. $pos[1] + 1 .','. $pos[2] .','. $pos->getWorld()->getFolderName();
       if (Main::existsData($ktra)) {
           Main::removeData($ktra);
+          foreach ($ev->getDrops() as $drop) {
+              $drop->getNamedTag()->setString('osp', explode('_', $drop->getVanillaName())[0] .'_ore');
+          }
       }
   }
 }
