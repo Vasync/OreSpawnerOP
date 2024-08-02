@@ -5,6 +5,11 @@ A Ore Spawner for server.
 Example: `/osp coal "Coal Ore Spawner"` to give coal ore spawner
 
 ## 🧑‍💻For Developers
-```PHP
-$item->getNamedTag()->setString('osp', 'coal_ore');
+
+```php
+use LootSpace369\orespawnerop\Main as Osp;
+
+//...
+
+Osp::giveOSP($player, "coal", 10, 'ore spawner')
 ```
