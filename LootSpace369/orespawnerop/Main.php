@@ -32,6 +32,14 @@ class Main extends PluginBase {
       self::$data->set('osp', array_merge($data, self::getData()));
   }
 
+  public static function removeData(string $data) {
+      foreach (self::getData() as $osp) {
+          $exosp = explode($osp);
+          if ($data == $exosp[0] .','. $exosp[1] + 1 .','. $exosp[2] .',' $exosp[3]) {
+              unset(self::$data['osp'][$osp];
+          }
+  }
+
   public static function exists(string $data): bool {
       foreach (self::getData() as $osp) {
           $exosp = explode($osp);
