@@ -11,5 +11,5 @@ use LootSpace369\orespawnerop\Main as Osp;
 
 //...
 
-Osp::giveOSP($player, "coal", 10, 'ore spawner')
+Osp::giveOSP($player, "coal", 10, 'ore spawner');
 ```
