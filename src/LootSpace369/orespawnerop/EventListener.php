@@ -15,7 +15,8 @@ class EventListener implements Listener {
       $item = $ev->getItem();
     
       if ($item->getNamedTag()->getTag('osp') !== null) {
-          $pos = $ev->getTransaction()->getBlocks();
+          $poss = $ev->getTransaction()->getBlocks();
+          foreach ($poss as $pos)
           Main::setData($pos[0] .','. ($pos[1] + 1) .','. $pos[2] .','. $ev->getPlayer()->getWorld()->getFolderName() .','. $item->getNamedTag()->getString('osp'));
       }
   }
