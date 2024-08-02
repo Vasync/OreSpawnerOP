@@ -41,6 +41,7 @@ class Main extends PluginBase {
             
               break;
           }
+      }
   }
 
   public static function exists(string $data): bool {
