@@ -23,6 +23,10 @@ class Main extends PluginBase {
     
     $this->getLogger()->notice('Ore Spawner OP on enable!');
   }
+
+  public static function getData(): Config {
+      return self::$data;
+  }
   
   public function onCommand(CommandSender $player, Command $command, string $label, array $args): bool {
       if ($command->getName() === "orespawner") {
@@ -40,7 +44,7 @@ class Main extends PluginBase {
               }
           }
       }
-    return false;
+      return false;
   }
 
   public function giveOSP(Player $player, string $type, $name = 'ore spawner') {
