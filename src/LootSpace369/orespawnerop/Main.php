@@ -66,8 +66,8 @@ class Main extends PluginBase {
 
               if (in_array($args[0], $type)) {
                   $arg[2] ?? $arg[2] = 1;
-                  if (!isset($args[1])) { $this->giveOSP($player, $args[0], $args[2]); return true; }
-                  $this->giveOSP($player, $args[0], $args[2], (string)$args[1]);
+                  if (!isset($args[1])) { self::giveOSP($player, $args[0], $args[2]); return true; }
+                  self::giveOSP($player, $args[0], $args[2], (string)$args[1]);
                   
                   return true;
               }
@@ -76,7 +76,7 @@ class Main extends PluginBase {
       return false;
   }
 
-  public function giveOSP(Player $player, string $type, int $count = 1, $name = 'ore spawner') {
+  public static function giveOSP(Player $player, string $type, int $count = 1, $name = 'ore spawner') {
 
       $item = StringToItemParser::getInstance()->parse($type.'_block')->setCustomName($name)->setCount($count);
       $item->getNamedTag()->setString('osp', $type.'_ore');
