@@ -38,7 +38,7 @@ class Main extends PluginBase {
           $exosp = explode(',', $osp);
         
           if ($data == $exosp[0] .','. ((int)$exosp[1] + 1) .','. $exosp[2] .','. $exosp[3]) {
-              unset(self::$data['osp'][$osp]);
+              unset(self::$data->get('osp')[$osp]);
             
               break;
           }
