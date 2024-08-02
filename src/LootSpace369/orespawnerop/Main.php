@@ -4,7 +4,7 @@ declare(strict_type=1);
 
 namespace LootSpace369\orespawnerop;
 
-use pocketmine\plugin\PluginBasse;
+use pocketmine\plugin\PluginBase;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
