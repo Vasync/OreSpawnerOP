@@ -3,3 +3,10 @@ version: 1.0.0
 api: 5.0.0
 author: LootSpace369
 main: LootSpace369\orespawnerop\Main
+commands:
+ orespawner:
+  permission: osp.cmd
+  description: ore spawner for server.
+permissions:
+ osp.cmd:
+  default: op
