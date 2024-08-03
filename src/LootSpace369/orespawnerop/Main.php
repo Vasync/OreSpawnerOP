@@ -34,7 +34,7 @@ class Main extends PluginBase {
       self::$data->save();
   }
 
-  public static function removeData(string $data): string {
+  public static function removeData(string $data): mixed {
       foreach (self::getData() as $osp) {
           $exosp = explode(',', $osp);
         
@@ -44,6 +44,7 @@ class Main extends PluginBase {
               return $exosp[5];
           }
       }
+    return 0;
   }
 
   public static function existsData(string $data): bool {
