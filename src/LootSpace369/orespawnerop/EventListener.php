@@ -28,7 +28,7 @@ class EventListener implements Listener {
       if (Main::existsData($ktra)) {
           Main::removeData($ktra);
           foreach ($ev->getDrops() as $drop) {
-              $drop->getNamedTag()->setString('osp', strtolower(explode('_', $drop->getVanillaName())[0]) .'_ore');
+              $drop->getNamedTag()->setString('osp', strtolower(explode(' ', $drop->getVanillaName())[0]) .'_ore');
           }
       }
   }
