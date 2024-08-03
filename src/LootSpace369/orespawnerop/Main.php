@@ -39,7 +39,7 @@ class Main extends PluginBase {
           $exosp = explode(',', $osp);
         
           if ($data == $exosp[0] .','. (int)$exosp[1] .','. $exosp[2] .','. $exosp[3]) {
-              unset(self::getData()[$osp]);
+              self::$data->removeNested('osp.'. $osp);
               self::$data->save();
               break;
           }
