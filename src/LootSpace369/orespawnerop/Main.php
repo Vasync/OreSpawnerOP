@@ -66,8 +66,8 @@ class Main extends PluginBase {
 
               if (in_array($args[0], $type)) {
                   $arg[2] ?? $arg[2] = 1;
-                  if (!isset($args[1])) { self::giveOSP($player, $args[0], $args[2]); return true; }
-                  self::giveOSP($player, $args[0], $args[2], (string)$args[1]);
+                  if (!isset($args[1])) { self::giveOSP($player, $args[0], (int)$args[2]); return true; }
+                  self::giveOSP($player, $args[0], (int)$args[2], (string)$args[1]);
                   
                   return true;
               }
