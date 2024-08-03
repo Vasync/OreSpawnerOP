@@ -34,14 +34,14 @@ class Main extends PluginBase {
       self::$data->save();
   }
 
-  public static function removeData(string $data): void {
+  public static function removeData(string $data): string {
       foreach (self::getData() as $osp) {
           $exosp = explode(',', $osp);
         
           if ($data == $exosp[0] .','. (int)$exosp[1] .','. $exosp[2] .','. $exosp[3]) {
               self::$data->removeNested('osp.'. $osp);
               self::$data->save();
-              break;
+              return $exosp[5];
           }
       }
   }
