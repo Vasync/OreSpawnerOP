@@ -65,7 +65,8 @@ class Main extends PluginBase {
               if (!isset($args[0]) or !in_array($args[0], $type)) { $player->sendMessage(TF::RED .'Please, input ore spawner type!'); return false; }
 
               if (in_array($args[0], $type)) {
-                  $arg[2] ?? $arg[2] = 1;
+                  $args[2] ?? $args[2] = 1;
+                
                   if (!isset($args[1])) { self::giveOSP($player, $args[0], (int)$args[2]); return true; }
                   self::giveOSP($player, $args[0], (int)$args[2], (string)$args[1]);
                   
@@ -80,6 +81,7 @@ class Main extends PluginBase {
 
       $item = StringToItemParser::getInstance()->parse($type.'_block')->setCustomName($name)->setCount($count);
       $item->getNamedTag()->setString('osp', $type.'_ore');
+      $item->getNamedTag()->setString('customname', $name);
 
       $player->getInventory()->addItem($item);
   }
