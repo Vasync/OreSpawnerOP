@@ -38,7 +38,7 @@ class Main extends PluginBase {
       foreach (self::getData() as $osp) {
           $exosp = explode(',', $osp);
         
-          if ($data == $exosp[0] .','. ((int)$exosp[1] + 1) .','. $exosp[2] .','. $exosp[3]) {
+          if ($data == $exosp[0] .','. (int)$exosp[1] .','. $exosp[2] .','. $exosp[3]) {
               unset(self::getData()[$osp]);
               self::$data->save();
               break;
@@ -49,7 +49,7 @@ class Main extends PluginBase {
   public static function existsData(string $data): bool {
       foreach (self::getData() as $osp) {
           $exosp = explode(',', $osp);
-          if ($data == $exosp[0] .','. ((int)$exosp[1] + 1) .','. $exosp[2] .','. $exosp[3]) {
+          if ($data == $exosp[0] .','. (int)$exosp[1]) .','. $exosp[2] .','. $exosp[3]) {
               return true;
           }
       }
