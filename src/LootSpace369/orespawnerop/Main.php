@@ -44,7 +44,7 @@ class Main extends PluginBase {
               return $exosp[5];
           }
       }
-    return 0;
+    return 'Ore Spawner OP';
   }
 
   public static function existsData(string $data): bool {
@@ -78,7 +78,7 @@ class Main extends PluginBase {
       return false;
   }
 
-  public static function giveOSP(Player $player, string $type, int $count = 1, $name = 'ore spawner') {
+  public static function giveOSP(Player $player, string $type, int $count = 1, $name = 'Ore Spawner OP') {
 
       $item = StringToItemParser::getInstance()->parse($type.'_block')->setCustomName($name)->setCount($count);
       $item->getNamedTag()->setString('osp', $type.'_ore');
